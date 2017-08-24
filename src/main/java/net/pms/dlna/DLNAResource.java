@@ -3683,7 +3683,7 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 			}
 		}
 
-		if (languageCode != null) {
+		if (languageCode != null && this.getParent() instanceof FileTranscodeVirtualFolder) {
 			String code = Iso639.getISO639_2Code(languageCode.toLowerCase());
 			InputStream is = getResourceInputStream("/images/codes/" + code + ".png");
 			if (is != null) {
